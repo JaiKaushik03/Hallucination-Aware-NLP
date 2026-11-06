@@ -8,12 +8,26 @@ An auditable experiment comparing GPT-2 answers, conservative verification, and 
 
 Use **64-bit Python 3.11–3.13**. The complete dependency environment was checked on Windows with Python 3.13.7. Python 3.8 from the original README is no longer supported.
 
+### Get and open the project
+
+The commands below use Python 3.13 on Windows. If you installed Python 3.11 or 3.12, replace `py -3.13` with your installed version. Install Git if using the clone command.
+
+Open PowerShell in the folder where you want to keep the project:
+
+```powershell
+git clone https://github.com/JaiKaushik03/Hallucination-Aware-NLP.git
+cd Hallucination-Aware-NLP
+```
+
+Alternatively, choose **Code → Download ZIP** on GitHub, extract it, and open PowerShell in the extracted folder containing `main.py`. You can open that same folder in your editor. Run all commands below from this project folder.
+
+This project runs in the **terminal**, rather than opening a website. Each run prints its results and the location of its output files.
+
 ### 1. Try the offline demo
 
 No dependencies, model downloads, GPU, or API key are needed:
 
 ```powershell
-cd "C:\Users\laddo\OneDrive\Documents\ChatGPT\Job\Hallucination-Aware-NLP-fixed"
 py -3.13 main.py --demo
 ```
 
