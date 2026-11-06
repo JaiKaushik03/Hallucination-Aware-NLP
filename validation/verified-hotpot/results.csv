@@ -1,0 +1,4 @@
+﻿sample_id,question,reference_answer,system,prediction,status,reason,confidence,fallback_used,exact_match,token_f1,rouge_l
+5add1d575542992c1e3a2540,What nationality was Oliver Reed's character in the film Royal Flash?,Prussian,baseline_gpt2,"Oliver Reed was born in London, England on 13 February 1938.  He was raised in a small town in the south of England.  He",answered,unverified_generation,,False,0.0,0.0,0.0
+5add1d575542992c1e3a2540,What nationality was Oliver Reed's character in the film Royal Flash?,Prussian,verified_gpt2,,abstained,evidence_conflict,0.902780294418335,False,0.0,0.0,0.0
+5add1d575542992c1e3a2540,What nationality was Oliver Reed's character in the film Royal Flash?,Prussian,extractive_qa,,abstained,evidence_conflict,0.902780294418335,False,0.0,0.0,0.0

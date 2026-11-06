@@ -1,0 +1,4 @@
+[
+  {"id":"smoke-real-1","question":"What is the capital of France?","answer":"Paris","type":"bridge","context":{"title":["France","France detail"],"sentences":[["Paris is the capital of France."],["France is a country in Europe."]]}},
+  {"id":"smoke-real-2","question":"What is the capital of Japan?","answer":"Tokyo","type":"bridge","context":{"title":["Japan","Japan detail"],"sentences":[["Tokyo is the capital of Japan."],["Japan is a country in East Asia."]]}}
+]

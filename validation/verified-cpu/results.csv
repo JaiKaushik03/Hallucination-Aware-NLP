@@ -1,0 +1,7 @@
+﻿sample_id,question,reference_answer,system,prediction,status,reason,confidence,fallback_used,exact_match,token_f1,rouge_l
+smoke-real-2,What is the capital of Japan?,Tokyo,baseline_gpt2,Tokyo is the capital of Japan.,answered,unverified_generation,,False,0.0,0.33333333333333337,0.3333333333333333
+smoke-real-2,What is the capital of Japan?,Tokyo,verified_gpt2,,abstained,candidate_not_supported_by_anchor,0.9275881206267513,False,0.0,0.0,0.0
+smoke-real-2,What is the capital of Japan?,Tokyo,extractive_qa,Tokyo,answered,extractive_anchor,0.9275881206267513,False,1.0,1.0,1.0
+smoke-real-1,What is the capital of France?,Paris,baseline_gpt2,Paris is the capital of France.,answered,unverified_generation,,False,0.0,0.33333333333333337,0.3333333333333333
+smoke-real-1,What is the capital of France?,Paris,verified_gpt2,,abstained,candidate_not_supported_by_anchor,0.6929843425750732,False,0.0,0.0,0.0
+smoke-real-1,What is the capital of France?,Paris,extractive_qa,Paris,answered,extractive_anchor,0.6929843425750732,False,1.0,1.0,1.0

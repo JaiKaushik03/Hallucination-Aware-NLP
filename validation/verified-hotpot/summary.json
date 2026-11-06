@@ -1,0 +1,112 @@
+{
+  "selected_questions": 1,
+  "completed_questions": 1,
+  "complete": true,
+  "schema_version": 1,
+  "mode": "real_models",
+  "metrics_are_fractions": true,
+  "hallucination_rate": null,
+  "note": "Answer accuracy and verifier rejection are not hallucination measurements. Demo outputs are synthetic tests, not benchmark results.",
+  "overall": {
+    "baseline_gpt2": {
+      "questions": 1,
+      "answered": 1,
+      "abstentions": 0,
+      "errors": 0,
+      "coverage": 1.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "answered_exact_match": 0.0,
+      "exact_match_95_wilson": [
+        0.0,
+        0.7934506856227626
+      ],
+      "fallbacks": 0
+    },
+    "verified_gpt2": {
+      "questions": 1,
+      "answered": 0,
+      "abstentions": 1,
+      "errors": 0,
+      "coverage": 0.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "answered_exact_match": null,
+      "exact_match_95_wilson": [
+        0.0,
+        0.7934506856227626
+      ],
+      "fallbacks": 0
+    },
+    "extractive_qa": {
+      "questions": 1,
+      "answered": 0,
+      "abstentions": 1,
+      "errors": 0,
+      "coverage": 0.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "answered_exact_match": null,
+      "exact_match_95_wilson": [
+        0.0,
+        0.7934506856227626
+      ],
+      "fallbacks": 0
+    }
+  },
+  "by_reference_answer_type": {
+    "span": {
+      "baseline_gpt2": {
+        "questions": 1,
+        "answered": 1,
+        "abstentions": 0,
+        "errors": 0,
+        "coverage": 1.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": 0.0,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      },
+      "verified_gpt2": {
+        "questions": 1,
+        "answered": 0,
+        "abstentions": 1,
+        "errors": 0,
+        "coverage": 0.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": null,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      },
+      "extractive_qa": {
+        "questions": 1,
+        "answered": 0,
+        "abstentions": 1,
+        "errors": 0,
+        "coverage": 0.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": null,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      }
+    }
+  }
+}

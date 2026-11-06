@@ -1,0 +1,7 @@
+{
+  "check": "real GPT-2 oversized context budget",
+  "input_tokens": 992,
+  "max_new_tokens": 32,
+  "window": 1024,
+  "passed": true
+}

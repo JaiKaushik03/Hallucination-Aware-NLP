@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "mode": "synthetic_demo",
+  "config": {
+    "seed": 42,
+    "device": "auto",
+    "top_k": 4,
+    "qa_threshold": 0.15,
+    "contradiction_threshold": 0.9,
+    "fallback": "abstain",
+    "max_new_tokens": 32,
+    "batch_size": 4,
+    "threads": 4,
+    "generator_model": "openai-community/gpt2",
+    "generator_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "qa_model": "deepset/roberta-base-squad2",
+    "qa_revision": "adc3b06f79f797d1c575d5479d6f5efe54a9e3b4",
+    "nli_model": "facebook/bart-large-mnli",
+    "nli_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dataset_name": "hotpotqa/hotpot_qa",
+    "dataset_revision": "1908d6afbbead072334abe2965f91bd2709910ab"
+  },
+  "source_hash": "ebec3d1c18e12e09c6bff67836d666581c594dcd6486555424669ee0d6ec0859",
+  "sample_ids": [
+    "demo-boolean",
+    "demo-author",
+    "demo-conflict",
+    "demo-paris"
+  ],
+  "sample_fingerprint": "b393fcce1e19165c61ec55c7794a287893a24a9ed3b46784b9b55b62360fafd9",
+  "split": "local_file",
+  "python": "3.13.7",
+  "packages": {
+    "torch": "2.9.1",
+    "transformers": "4.57.6",
+    "datasets": "4.4.1",
+    "openpyxl": "3.1.5"
+  },
+  "started_at_utc": "2026-11-06T13:32:58.469377+00:00"
+}

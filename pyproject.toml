@@ -1,0 +1,13 @@
+[project]
+name = "hallucination-aware-nlp"
+version = "1.0.0"
+description = "Auditable QA verification experiments with conservative abstention"
+requires-python = ">=3.11,<3.14"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = [".venv", ".cache", "legacy", "runs", "validation"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

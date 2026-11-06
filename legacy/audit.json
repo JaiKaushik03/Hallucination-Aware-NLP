@@ -1,0 +1,73 @@
+{
+  "input_sha256": "3388acd6d5465fec25e17e295619743bb13756cd4577dfa3c9e15ea4ea0bb6d8",
+  "questions": 200,
+  "kind": "audit_of_original_predictions_not_a_new_run",
+  "metrics_are_fractions": true,
+  "recomputed": {
+    "baseline_gpt2": {
+      "exact_match": 0.0,
+      "token_f1": 0.005424171445078309,
+      "rouge_l": 0.005504816606368631,
+      "stored_rejections": null
+    },
+    "verified_gpt2": {
+      "exact_match": 0.285,
+      "token_f1": 0.34627380952380954,
+      "rouge_l": 0.34627380952380954,
+      "stored_rejections": 0
+    },
+    "extractive_qa": {
+      "exact_match": 0.4,
+      "token_f1": 0.48075108225108226,
+      "rouge_l": 0.48075108225108226,
+      "stored_rejections": 0
+    }
+  },
+  "original_summary": [
+    [
+      "Metric",
+      "Value"
+    ],
+    [
+      "Normal LLM Exact Accuracy (%)",
+      0
+    ],
+    [
+      "Hallucination-Aware LLM Exact Accuracy (%)",
+      29
+    ],
+    [
+      "Grounded LLM Exact Accuracy (%)",
+      40.5
+    ],
+    [
+      null,
+      null
+    ],
+    [
+      "Normal LLM Inclusive Accuracy (%)",
+      10.5
+    ],
+    [
+      "Hallucination-Aware LLM Inclusive Accuracy (%)",
+      38.5
+    ],
+    [
+      "Grounded LLM Inclusive Accuracy (%)",
+      51
+    ],
+    [
+      null,
+      null
+    ],
+    [
+      "Hallucination-Aware LLM Rejection Rate (%)",
+      0
+    ],
+    [
+      "Grounded LLM Rejection Rate (%)",
+      0
+    ]
+  ],
+  "note": "These predictions came from an unknown earlier implementation. Their accuracy cannot be interpreted as hallucination rate or evidence for the corrected pipeline. The original README confused inclusive matching with exact accuracy and reported rejections not present in this workbook."
+}

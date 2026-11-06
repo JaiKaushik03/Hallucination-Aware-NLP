@@ -1,0 +1,6 @@
+[
+  {"id":"demo-paris","question":"What is the capital of France?","answer":"Paris","type":"bridge","context":{"title":["France","Distractor"],"sentences":[["France has a capital city. [ANSWER: Paris]"],["Berlin is a city in Germany."]]}},
+  {"id":"demo-author","question":"Who wrote the fictional book River Days?","answer":"Alex River","type":"bridge","context":{"title":["River Days","Distractor"],"sentences":[["River Days is a fictional book. Its author is [ANSWER: Alex River]."],["Mira Lake wrote a different fictional book."]]}},
+  {"id":"demo-boolean","question":"Are both fictional clubs based in the same city?","answer":"no","type":"comparison","context":{"title":["Club A","Club B"],"sentences":[["Fictional Club A is based in Paris."],["Fictional Club B is based in Berlin."]]}},
+  {"id":"demo-conflict","question":"What is the fictional town's founding year?","answer":"1900","type":"comparison","context":{"title":["Town record one","Town record two"],"sentences":[["The fictional town was founded in [ANSWER: 1900]."],["[CONFLICT] The fictional town was founded in 1950."]]}}
+]

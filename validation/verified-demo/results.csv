@@ -1,0 +1,13 @@
+﻿sample_id,question,reference_answer,system,prediction,status,reason,confidence,fallback_used,exact_match,token_f1,rouge_l
+demo-boolean,Are both fictional clubs based in the same city?,no,baseline_gpt2,unverified demo guess,answered,unverified_generation,,False,0.0,0.0,0.0
+demo-boolean,Are both fictional clubs based in the same city?,no,verified_gpt2,,abstained,boolean_question_requires_non_extractive_reasoning,,False,0.0,0.0,0.0
+demo-boolean,Are both fictional clubs based in the same city?,no,extractive_qa,,abstained,boolean_question_requires_non_extractive_reasoning,,False,0.0,0.0,0.0
+demo-author,Who wrote the fictional book River Days?,Alex River,baseline_gpt2,Alex River,answered,unverified_generation,,False,1.0,1.0,1.0
+demo-author,Who wrote the fictional book River Days?,Alex River,verified_gpt2,Alex River,answered,candidate_matches_anchor,0.95,False,1.0,1.0,1.0
+demo-author,Who wrote the fictional book River Days?,Alex River,extractive_qa,Alex River,answered,extractive_anchor,0.95,False,1.0,1.0,1.0
+demo-conflict,What is the fictional town's founding year?,1900,baseline_gpt2,1900,answered,unverified_generation,,False,1.0,1.0,1.0
+demo-conflict,What is the fictional town's founding year?,1900,verified_gpt2,,abstained,evidence_conflict,0.95,False,0.0,0.0,0.0
+demo-conflict,What is the fictional town's founding year?,1900,extractive_qa,,abstained,evidence_conflict,0.95,False,0.0,0.0,0.0
+demo-paris,What is the capital of France?,Paris,baseline_gpt2,Paris,answered,unverified_generation,,False,1.0,1.0,1.0
+demo-paris,What is the capital of France?,Paris,verified_gpt2,Paris,answered,candidate_matches_anchor,0.95,False,1.0,1.0,1.0
+demo-paris,What is the capital of France?,Paris,extractive_qa,Paris,answered,extractive_anchor,0.95,False,1.0,1.0,1.0
