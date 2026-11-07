@@ -1,5 +1,15 @@
 # Hallucination-Aware NLP — corrected project
 
+## Verified demo output
+
+This project runs in the terminal, not as a web app. On November 7, 2026, the offline CLI demo completed all four synthetic examples without execution errors. The regression suite ran 56 tests successfully, with three optional dependency tests skipped.
+
+- [Actual generated summary](docs/screenshots/demo-summary.json)
+- [Readable HTML report](docs/screenshots/demo-results.html) — download and open locally; generated directly from that summary.
+
+**Synthetic software demo only: no model inference, benchmark accuracy, or hallucination-reduction claim.** Browser policy prevented capturing the local HTML report, so no screenshot is presented as if a real model run occurred.
+
+
 An auditable experiment comparing GPT-2 answers, conservative verification, and extractive QA on HotpotQA. Based on the original project credited to Sanskar Lohani, Aniruddha Tayade, and Jai (Florida International University, 2025).
 
 **The original performance claims are withdrawn.** The bundled workbook did not match the original README, and its permissive substring scoring could mark wrong answers as correct. Accuracy, rejection, and hallucination are different measurements. This project reports answer accuracy, coverage, abstentions, and execution errors; it does not invent a hallucination rate.
