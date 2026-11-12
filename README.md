@@ -168,3 +168,17 @@ The original convenience module names remain. Aware/grounded convenience functio
 - [Transformers generation parameter documentation](https://huggingface.co/docs/transformers/v4.52.2/main_classes/text_generation)
 
 Model/data licenses remain with their respective owners. Original author attribution is preserved; no license for the original project is invented here. Model weights, caches and the local virtual environment are excluded from the distribution ZIP.
+
+
+## Reproducible benchmark report
+
+```powershell
+python main.py --sample-size 20 --split validation --seed 42 --device cpu --output runs/benchmark-20
+python benchmark_report.py runs/benchmark-20
+```
+
+The first command runs all three comparison systems with the pinned model and dataset revisions. The second reads existing checkpoints and writes `benchmark.json`; it does not generate answers or alter predictions. It reports exact match, token F1, coverage, answered-only accuracy, abstentions, execution errors and shared per-question pipeline latency (median and p95). The first completed question and timings excluding it are shown separately because initialization can dominate the first question. These durations cannot be attributed to individual models and omit dataset preparation and idle time between resumed processes.
+
+Missing timing data is rejected, and synthetic and partial runs are labelled explicitly. Three additional regression tests cover percentile behavior, empty runs and partial synthetic runs containing errors. The dependency-free suite executes 59 tests, skipping optional tensor tests when PyTorch is absent; skipped tests are not passes.
+
+The GitHub Actions workflow runs regressions and an explicitly synthetic demonstration. An optional manual real-model job evaluates 20 seeded validation questions and retains its outputs. Regression success is not real-model benchmark success. Inspect mode, completed/selected counts and error counts before using any result in a resume. `requirements-benchmark-win-py312.txt` records the separate Windows/Python 3.12 benchmark environment; the older Python 3.13 lock remains available.

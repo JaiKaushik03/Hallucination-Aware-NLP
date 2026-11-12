@@ -1,0 +1,42 @@
+name: Verify evaluation and benchmark
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      real_evaluation:
+        description: Run the pinned real-model 20-question CPU evaluation
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - run: python main.py --demo --output runs/ci-demo
+      - run: python benchmark_report.py runs/ci-demo
+  real-model-evaluation:
+    if: github.event_name == 'workflow_dispatch' && inputs.real_evaluation
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install --no-compile -r requirements.txt
+      - run: python main.py --sample-size 20 --split validation --seed 42 --device cpu --output runs/benchmark-20
+      - if: always()
+        run: python benchmark_report.py runs/benchmark-20
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-model-benchmark
+          path: runs/benchmark-20
