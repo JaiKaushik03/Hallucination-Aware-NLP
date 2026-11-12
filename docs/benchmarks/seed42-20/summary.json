@@ -1,0 +1,162 @@
+{
+  "selected_questions": 20,
+  "completed_questions": 20,
+  "complete": true,
+  "schema_version": 1,
+  "mode": "real_models",
+  "metrics_are_fractions": true,
+  "hallucination_rate": null,
+  "note": "Answer accuracy and verifier rejection are not hallucination measurements. Demo outputs are synthetic tests, not benchmark results.",
+  "overall": {
+    "baseline_gpt2": {
+      "questions": 20,
+      "answered": 20,
+      "abstentions": 0,
+      "errors": 0,
+      "coverage": 1.0,
+      "exact_match": 0.0,
+      "token_f1": 0.030043576696500235,
+      "rouge_l": 0.030043576696500235,
+      "answered_exact_match": 0.0,
+      "exact_match_95_wilson": [
+        0.0,
+        0.16112515805281938
+      ],
+      "fallbacks": 0
+    },
+    "verified_gpt2": {
+      "questions": 20,
+      "answered": 0,
+      "abstentions": 20,
+      "errors": 0,
+      "coverage": 0.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "answered_exact_match": null,
+      "exact_match_95_wilson": [
+        0.0,
+        0.16112515805281938
+      ],
+      "fallbacks": 0
+    },
+    "extractive_qa": {
+      "questions": 20,
+      "answered": 4,
+      "abstentions": 16,
+      "errors": 0,
+      "coverage": 0.2,
+      "exact_match": 0.1,
+      "token_f1": 0.1,
+      "rouge_l": 0.1,
+      "answered_exact_match": 0.5,
+      "exact_match_95_wilson": [
+        0.027866481213768224,
+        0.3010336452284873
+      ],
+      "fallbacks": 0
+    }
+  },
+  "by_reference_answer_type": {
+    "boolean": {
+      "baseline_gpt2": {
+        "questions": 1,
+        "answered": 1,
+        "abstentions": 0,
+        "errors": 0,
+        "coverage": 1.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": 0.0,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      },
+      "verified_gpt2": {
+        "questions": 1,
+        "answered": 0,
+        "abstentions": 1,
+        "errors": 0,
+        "coverage": 0.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": null,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      },
+      "extractive_qa": {
+        "questions": 1,
+        "answered": 0,
+        "abstentions": 1,
+        "errors": 0,
+        "coverage": 0.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": null,
+        "exact_match_95_wilson": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fallbacks": 0
+      }
+    },
+    "span": {
+      "baseline_gpt2": {
+        "questions": 19,
+        "answered": 19,
+        "abstentions": 0,
+        "errors": 0,
+        "coverage": 1.0,
+        "exact_match": 0.0,
+        "token_f1": 0.031624817575263406,
+        "rouge_l": 0.031624817575263406,
+        "answered_exact_match": 0.0,
+        "exact_match_95_wilson": [
+          0.0,
+          0.16817922405261626
+        ],
+        "fallbacks": 0
+      },
+      "verified_gpt2": {
+        "questions": 19,
+        "answered": 0,
+        "abstentions": 19,
+        "errors": 0,
+        "coverage": 0.0,
+        "exact_match": 0.0,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "answered_exact_match": null,
+        "exact_match_95_wilson": [
+          0.0,
+          0.16817922405261626
+        ],
+        "fallbacks": 0
+      },
+      "extractive_qa": {
+        "questions": 19,
+        "answered": 4,
+        "abstentions": 15,
+        "errors": 0,
+        "coverage": 0.21052631578947367,
+        "exact_match": 0.10526315789473684,
+        "token_f1": 0.10526315789473684,
+        "rouge_l": 0.10526315789473684,
+        "answered_exact_match": 0.5,
+        "exact_match_95_wilson": [
+          0.02935856029887013,
+          0.31394082711109006
+        ],
+        "fallbacks": 0
+      }
+    }
+  }
+}

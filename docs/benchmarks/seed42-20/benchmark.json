@@ -1,0 +1,78 @@
+{
+  "mode": "real_models",
+  "benchmark_is_real_models": true,
+  "selected_questions": 20,
+  "completed_questions": 20,
+  "complete": true,
+  "source_hash": "43e6a217bf0252e46f403add28476790abbb17f70a1c21e6407c9a22251b5bc9",
+  "sample_fingerprint": "0154411aa43be023d36275a98f018b3f61ac741ebc0dfbfcbddc01500adece3b",
+  "seed": 42,
+  "metrics": {
+    "baseline_gpt2": {
+      "questions": 20,
+      "answered": 20,
+      "abstentions": 0,
+      "errors": 0,
+      "coverage": 1.0,
+      "exact_match": 0.0,
+      "token_f1": 0.030043576696500235,
+      "rouge_l": 0.030043576696500235,
+      "answered_exact_match": 0.0,
+      "exact_match_95_wilson": [
+        0.0,
+        0.16112515805281938
+      ],
+      "fallbacks": 0
+    },
+    "verified_gpt2": {
+      "questions": 20,
+      "answered": 0,
+      "abstentions": 20,
+      "errors": 0,
+      "coverage": 0.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "answered_exact_match": null,
+      "exact_match_95_wilson": [
+        0.0,
+        0.16112515805281938
+      ],
+      "fallbacks": 0
+    },
+    "extractive_qa": {
+      "questions": 20,
+      "answered": 4,
+      "abstentions": 16,
+      "errors": 0,
+      "coverage": 0.2,
+      "exact_match": 0.1,
+      "token_f1": 0.1,
+      "rouge_l": 0.1,
+      "answered_exact_match": 0.5,
+      "exact_match_95_wilson": [
+        0.027866481213768224,
+        0.3010336452284873
+      ],
+      "fallbacks": 0
+    }
+  },
+  "timing": {
+    "scope": "shared retrieval/generation/verification pipeline per question",
+    "first_completed_question_s": 160.953,
+    "all_question_median_s": 23.031,
+    "all_question_p95_s": 74.015,
+    "excluding_first_median_s": 23.031,
+    "excluding_first_p95_s": 74.015,
+    "summed_question_runtime_s": 638.859,
+    "excludes": "dataset preparation and any idle time between resumed processes"
+  },
+  "limitations": [
+    "Synthetic demo mode is a software fixture, not a model benchmark.",
+    "Scores include all completed questions, including errors and abstentions.",
+    "Incomplete runs are partial evidence and must not be presented as complete.",
+    "Latency is shared across systems and cannot be attributed to an individual model.",
+    "Accuracy and abstention do not establish a hallucination reduction rate.",
+    "A small sample cannot establish broad model quality."
+  ]
+}
