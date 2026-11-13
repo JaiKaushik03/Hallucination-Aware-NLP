@@ -168,3 +168,33 @@ The original convenience module names remain. Aware/grounded convenience functio
 - [Transformers generation parameter documentation](https://huggingface.co/docs/transformers/v4.52.2/main_classes/text_generation)
 
 Model/data licenses remain with their respective owners. Original author attribution is preserved; no license for the original project is invented here. Model weights, caches and the local virtual environment are excluded from the distribution ZIP.
+
+
+## Reproducible benchmark report
+
+```powershell
+python main.py --sample-size 20 --split validation --seed 42 --device cpu --output runs/benchmark-20
+python benchmark_report.py runs/benchmark-20
+```
+
+The first command runs all three comparison systems with the pinned model and dataset revisions. The second reads existing checkpoints and writes `benchmark.json`; it does not generate answers or alter predictions. It reports exact match, token F1, coverage, answered-only accuracy, abstentions, execution errors and shared per-question pipeline latency (median and p95). The first completed question and timings excluding it are shown separately because initialization can dominate the first question. These durations cannot be attributed to individual models and omit dataset preparation and idle time between resumed processes.
+
+Missing timing data is rejected, and synthetic and partial runs are labelled explicitly. Three additional regression tests cover percentile behavior, empty runs and partial synthetic runs containing errors. The dependency-free suite executes 59 tests, skipping optional tensor tests when PyTorch is absent; skipped tests are not passes.
+
+The GitHub Actions workflow runs regressions and an explicitly synthetic demonstration. An optional manual real-model job evaluates 20 seeded validation questions and retains its outputs. Regression success is not real-model benchmark success. Inspect mode, completed/selected counts and error counts before using any result in a resume. `requirements-benchmark-win-py312.txt` records the separate Windows/Python 3.12 benchmark environment; the older Python 3.13 lock remains available.
+
+### Completed real-model run — November 12, 2026
+
+The [recorded run](docs/benchmarks/seed42-20/benchmark.json) completed all 20 selected HotpotQA validation questions with seed 42 on CPU (4 threads), using the pinned revisions in [metadata](docs/benchmarks/seed42-20/metadata.json). These are fresh model outputs, not demonstration fixtures. [Per-question predictions and evidence](docs/benchmarks/seed42-20/results.jsonl) and the [full summary](docs/benchmarks/seed42-20/summary.json) are retained for inspection.
+
+| System | All-question exact match | Token F1 | Coverage | Abstentions | Execution errors |
+|---|---:|---:|---:|---:|---:|
+| GPT-2 baseline | 0% | 3.00% | 100% | 0/20 | 0 |
+| Verified GPT-2 | 0% | 0% | 0% | 20/20 | 0 |
+| Extractive QA | 10% | 10% | 20% | 16/20 | 0 |
+
+The verified system's zero coverage is a failure to provide useful answers on this sample, not evidence of successful hallucination prevention. Extractive QA answered 4 questions and matched 2; its 50% answered-only accuracy must be read alongside 20% coverage and 10% all-question accuracy. Twenty questions cannot establish broad model quality, and no independent hallucination annotations were collected.
+
+The shared retrieval/generation/verification pipeline took 638.859 seconds summed across questions: median 23.031 seconds and nearest-rank p95 74.015 seconds. The first question took 160.953 seconds, including model initialization/downloads; excluding it, median and p95 remained 23.031 and 74.015 seconds. Timings omit dataset preparation and are not individual-model latencies. Python and inference-package versions are recorded in metadata; this is a local Windows development measurement, not a controlled cross-machine comparison.
+
+The next model-quality experiment should investigate retrieval misses and verifier rejection reasons on a separate development split, then lock any changed thresholds before evaluating a larger held-out sample. This run does not establish an accuracy improvement, production readiness, or a hallucination-reduction percentage.
